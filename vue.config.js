@@ -36,7 +36,16 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    before: require('./mock/mock-server.js')
+    // before: require('./mock/mock-server.js')
+    proxy: {
+      '/': {
+        target: process.env.VUE_APP_BASE_API, // dev
+        // target: 'http://k8s-azure.silot.tech:30357/', // uat
+        pathRewrite: { '^/': '/' },
+        changeOrigin: true // target是域名的话，需要这个参数，
+        // secure: false // 设置支持https协议的代理
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
