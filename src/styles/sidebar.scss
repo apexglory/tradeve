@@ -3,7 +3,6 @@
   .main-container {
     min-height: 100%;
     transition: margin-left .28s;
-    margin-left: $sideBarWidth;
     position: relative;
   }
 
@@ -97,7 +96,6 @@
     }
 
     .main-container {
-      margin-left: 54px;
     }
 
     .submenu-title-noDropdown {
